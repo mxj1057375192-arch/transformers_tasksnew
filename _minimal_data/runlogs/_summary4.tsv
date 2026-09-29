@@ -1,0 +1,5 @@
+TASK                        	STATUS    	SECONDS 	NOTE
+matching_dssm               	OK        	1348    	best F1 performence has been updated: 0.46288 --> 0.67742
+matching_senttrans          	OK        	1348    	best F1 performence has been updated: 0.46980 --> 0.70886
+SimCSE                      	OK        	3944    	Evaluation precision: 0.54514, recall: 0.98742, F1: 0.70246, spearman_corr: 
+RLHF_PPO                    	OK        	1607    	

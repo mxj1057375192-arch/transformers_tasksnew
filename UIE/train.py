@@ -246,7 +246,9 @@ def train():
     reset_console()
     if not os.path.exists(args.pretrained_model):
         download_pretrained_model(args.pretrained_model)
-    model = torch.load(os.path.join(args.pretrained_model, 'pytorch_model.bin'))        # 加载预训练好的UIE模型，模型结构见：model.UIE()
+    # map_location: 官方权重是在 GPU 上保存的，无 CUDA 环境下不加此参数会报
+    # "Attempting to deserialize object on a CUDA device"
+    model = torch.load(os.path.join(args.pretrained_model, 'pytorch_model.bin'), map_location='cpu')        # 加载预训练好的UIE模型，模型结构见：model.UIE()
     model.to(args.device)
     tokenizer = AutoTokenizer.from_pretrained(args.pretrained_model)                    # 加载tokenizer，ERNIE 3.0
     dataset = load_dataset('text', data_files={'train': args.train_path,
@@ -319,7 +321,7 @@ def train():
                 epoch,
                 convert_func
             )
-            model = torch.load(os.path.join(args.pretrained_model, 'pytorch_model.bin'))        # 重新加载预训练模型
+            model = torch.load(os.path.join(args.pretrained_model, 'pytorch_model.bin'), map_location='cpu')        # 重新加载预训练模型
             model.to(args.device)
             optimizer, lr_scheduler = get_optimizer_and_scheler(model, train_dataloader)
 

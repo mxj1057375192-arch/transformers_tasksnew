@@ -1,0 +1,10 @@
+TASK                        	STATUS    	SECONDS 	NOTE
+matching_pointwise          	OK        	1677    	best F1 performence has been updated: 0.82609 --> 0.87156
+matching_dssm               	TIMEOUT   	2401    	超过 2400s 被中断
+matching_senttrans          	TIMEOUT   	2400    	超过 2400s 被中断
+UIE                         	OK        	1814    	Evaluation precision: 0.71930, recall: 0.91111, F1: 0.80392
+RLHF_reward                 	OK        	1803    	best F1 performence has been updated: 0.00000 --> 0.37000
+SimCSE                      	FAIL(1)   	142     	FileNotFoundError: Couldn't find a module script at D:\new plm\text_matching\unsupervised\simcse\accuracy\accu
+T5_QA                       	OK        	705     	best BLEU-4 performence has been updated: 0.00000 --> 0.00000
+T5_filling                  	OK        	1260    	best BLEU-4 performence has been updated: 0.00000 --> 0.00000
+RLHF_PPO                    	FAIL(1)   	68      	AttributeError: module 'collections' has no attribute 'Mapping'

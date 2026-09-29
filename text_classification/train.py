@@ -80,6 +80,7 @@ def evaluate_model(model, metric, data_loader):
         global_step: 当前训练步数
     """
     model.eval()
+    metric.reset()                                  # 清空上一轮累积的预测，否则指标会在历史结果上累加
     with torch.no_grad():
         for step, batch in enumerate(data_loader):
             outputs = model(input_ids=batch['input_ids'].to(args.device),

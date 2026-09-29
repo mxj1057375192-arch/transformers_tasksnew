@@ -1,0 +1,8 @@
+TASK                        	STATUS    	SECONDS 	NOTE
+PET                         	OK        	1017    	best F1 performence has been updated: 0.69000 --> 0.73000
+matching_pointwise          	FAIL(1)   	142     	FileNotFoundError: Couldn't find a module script at D:\new plm\text_matching\supervised\accuracy\accuracy.py. 
+matching_dssm               	FAIL(1)   	139     	FileNotFoundError: Couldn't find a module script at D:\new plm\text_matching\supervised\accuracy\accuracy.py. 
+matching_senttrans          	FAIL(1)   	138     	FileNotFoundError: Couldn't find a module script at D:\new plm\text_matching\supervised\accuracy\accuracy.py. 
+UIE                         	FAIL(1)   	6       	RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you
+RLHF_reward                 	TIMEOUT   	3602    	超过 3600s 被中断
+SimCSE                      	FAIL(1)   	151     	FileNotFoundError: Couldn't find a module script at D:\new plm\text_matching\unsupervised\simcse\accuracy\accu

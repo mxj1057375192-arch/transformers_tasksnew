@@ -39,8 +39,8 @@ from iTrainingLogger import iSummaryWriter
 
 writer = iSummaryWriter(log_path='./logs', log_name='PPO-Sentiment-Zh')
 config = {
-    "model_name": 'uer/gpt2-chinese-cluecorpussmall',
-    "steps": 20000,
+    "model_name": 'D:/new plm/_models/gpt2-chinese-cluecorpussmall',
+    "steps": 640,
     "batch_size": 128,
     "forward_batch_size": 16,
     "ppo_epochs": 4,   
@@ -70,8 +70,8 @@ prompts = [
 ]
 
 # 情感分类模型
-senti_tokenizer = AutoTokenizer.from_pretrained('uer/roberta-base-finetuned-jd-binary-chinese')
-senti_model = AutoModelForSequenceClassification.from_pretrained('uer/roberta-base-finetuned-jd-binary-chinese')
+senti_tokenizer = AutoTokenizer.from_pretrained('D:/new plm/_models/roberta-base-finetuned-jd-binary-chinese')
+senti_model = AutoModelForSequenceClassification.from_pretrained('D:/new plm/_models/roberta-base-finetuned-jd-binary-chinese')
 sentiment_pipe = pipeline('sentiment-analysis', model=senti_model, tokenizer=senti_tokenizer, device=pipe_device)
 
 # 文本生成模型
